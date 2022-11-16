@@ -19,188 +19,130 @@
 \usepackage{nicematrix,tikz}
 \usetikzlibrary{tikzmark}
 
+\usepackage{tabularx,booktabs}
+\usepackage{lipsum}
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\setlength{\extrarowheight}{1pt}
+
 % macros
 \newcommand{\dd}[2]{\frac{\partial #1}{\partial #2}} % partial derivative
 
 % path
-\graphicspath{{/Users/lorybuttazzoni/Documents/TMU/CP8307-CV/Assignments/A2/code/output/}}
+\graphicspath{{/Users/lorybuttazzoni/Documents/TMU/CP8321-DL/Assignments/A6/}}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{CP8321 - Assignment 3\\
+\title{CP8321-A6: A Comparison of Deep Learning Libraries for Convolutional Neural Networks\\
 }
 
 \author{\IEEEauthorblockN{Christopher Indris}
 \IEEEauthorblockA{\textit{Department of Computer Science} \\
 \textit{Toronto Metropolitan University}\\
 Toronto, Canada \\
-christopher.indris@ryerson.ca}}
+cindris@cs.ryerson.ca}}
 
 \maketitle
 
 %%% START HERE
 
 %%% Abstract
-
 \begin{abstract}
-We would like to express the derivative of total error $E$ with respect to an output $y_{j}$, when neuron $j$ is an output neuron and also when neuron $j$ is a hidden neuron. We can also use sigmoid as a specific activation function. 
+This paper compares three of the leading Python deep learning libraries---PyTorch, TensorFlow, Keras---in the context of convolutional neural networks (CNNs). Areas of assessment include each library's requirements, their strengths and weaknesses, and their user experience during the creation of a CNN to classify MNIST digits. 
 \end{abstract}
 
-%%% Case 1
-\section{Part A, Case 1: Output Layer}
+%%% Keywords
+\begin{IEEEkeywords}
+PyTorch, TensorFlow, Keras, deep learning, CNN, API, ML
+\end{IEEEkeywords}
 
-The objective in this section is to calculate $\dd{E_{c}}{y_{j, c}}$. In this case, we assume that neuron $j$ is an output neuron--- it is in the output layer of the neural network. So, $j$ will index over neurons in the output layer. \\
+%%% 1. Introduction
+\section{Introduction}
+Machine learning has been a leading source of excitement among the various subfields of technology during the past decade. Researchers and hobbyists regard it as tremendously promising for many disciplines. Prior to the rise of frameworks and APIs that abstract away most of the technical details, the difficulty of building, training and deploying a machine learning model prohibited those without considerable computer science or engineering experience from involvement in the machine learning pipeline. There are now several libraries that can make working with neural networks far more concise than they otherwise would be, though it may not be initially clear which one is the best choice for a particular application or skill set. 
+%%% 2. Introduction
+\section{Overview}
+The key neural network architecture data structures that users of these libraries encounter are layers (for creating the model) and the models themselves. They may provide finer control over the architecture; there is the Keras Functional API for creating models that are more complex than a sequence of layers, and researchers can even subclass existing classes to build entirely new layers and models.
 
-If $j$ is an output neuron, $y_{j}$ is an output of the neural network which feeds directly into $E_{c}$, the error for a particular case $c$. \\
+PyTorch is a framework that was developed by Meta AI and pushed to open-source in 2017. The principal functionalities provided by PyTorch are GPU-accelerated tensor computation (\verb+torch+) and deep neural networks (\verb+torch.nn+) with autograd (\verb+torch.autograd+).
 
-$\dd{E_{c}}{y_{j,c}}$ \\
+TensorFlow is a machine learning platform and community hub to simplify research and the creation of applications. Google Brain launched TensorFlow 1.0 in 2015 with powerful and flexible low-level functionality. The low-level nature of TensorFlow 1.0 meant that it was difficult and tedious to work with, so in 2019 Google released TensorFlow 2.0. It now came paired with the high-level API of Keras so that writing a script using it became more straightforward, and did away with the need for a session environment. TensorFlow now supports ragged tensors (arrays with non-uniform shapes) and maintains its mission to make ML accessible by providing Trax, an end-to-end library focused on speed and clear code.
 
-$= \dd{}{y_{j,c}} \frac{1}{2} \sum_{c',j'}(y_{j',c'} - d_{j',c'})^{2}$ \\
+Keras is a high-level neural network API front-end with the aim of being accessible and modular. Created in 2015, it was adopted and integrated into TensorFlow in 2017 and would later become part of TensorFlow 2.0. Currently, TensorFlow is the only backend that Keras supports, and Keras will generally be used as part of TensorFlow, although Keras can still be used without TensorFlow (if the user is satisfied with the limited functionality that would result from not having the TensorFlow backend).
 
-$= \dd{}{y_{j,c}} \frac{1}{2} \sum_{c',j' \neq c,j}(y_{j',c'} - d_{j',c'})^{2} + \dd{}{y_{j,c}} \frac{1}{2}(y_{j,c} - d_{j,c})^{2}$ \\
+%%% 3. Hardware and Software Requirements
+\section{Hardware and Software Requirements}
 
-$= \dd{}{y_{j,c}} \frac{1}{2}(y_{j,c} - d_{j,c})^{2}$ \\
+PyTorch can be run on the macOS Catalina and Windows 7 operating systems and their successors, as well as Linux-based systems with GNU C Library (glibc) version 2.17 or later (for Ubuntu, this means 13.04 at the earliest). At an early phase of release is the end-to-end workflow for mobile deployment with PyTorch 1.3, so that PyTorch could be used on iOS or Android devices. PyTorch can be used for the C++, Java and Python languages; for Windows, Python 3.7-3.9 are supported and Anaconda environments are highly recommended due to their sandboxed nature (by default, Windows does not come with Python), though pip is a common package manager alternative. PyTorch can also be installed from source code, with a BLAS library (MKL) for optimized mathematic routines in an Anaconda environment. The NVIDIA CUDA toolkit and cuDNN library will be critical for CUDA GPU support for the deep learning code. Binary files on macOS do not support CUDA, so to have CUDA the user should install from source. PyTorch can run on ARM-based Macs.
 
-$= y_{j,c} - d_{j,c}$ \\
+TensorFlow can be used by machines operating with macOS Sierra, Windows 7 and Ubuntu 16.04 and their successors. It is available for Python 3.7 through to 3.10. For GPU support (NVIDIA CUDA architecture), the NVIDIA CUDA toolkit, cuDNN SDK and appropriate drivers are needed, with TensorRT as a useful optional extra for better latency and throughput for ML inference. On macOS, GPUs are not supported by default, but a Miniconda environment is a reccomended workaround. On Windows, the last version supporting a GPU is TensorFlow 2.10; for later versions, the user is advised to use WSL2 (Windows Subsystem for Linux). For macOS devices with an M1 chip, the \verb+tensorflow-metal+ plug-in is used, though this version cannot handle working with multiple GPUs. Most users will use Keras with TensorFlow (\verb+tensorflow.keras+), and so the hardware and software requirements follow from TensorFlow. 
 
-In addition, we can compute the error signal $\delta_{j, c} = \dd{E_{c}}{x_{j,c}}$ using what we have calculated above. To calculate $\delta_{j,c}$, we will apply the chain rule. We also recognize that the activation function $f$ can be expressed as $y_{j, c} = f(x_{j, c})$, where $x_{j, c}$ is the total input to node $j$ for case $c$. \\
+%%% 4. Installation Process and Related Requirements
+\section{Installation Process and Related Requirements}
 
-$\delta_{j, c}$ \\
+To install PyTorch, simplest method is typically to run the \verb+pip install torch+ command. PyTorch can also be built from source code, or run with a pre-built Docker image. The image provides virtualization in the form of a container. Arguably the easiest method of all is to use Google Colaboratory, which runs in a browser and comes pre-installed with PyTorch. The user can then run \verb+import torch+ in their Python script or console. PyTorch lists NumPy and Cmake as dependencies; the former since tensors and NumPy ndarrays are closely related, the latter since PyTorch was written mainly in C++.
 
-$= \dd{E_{c}}{x_{j,c}}$ \\
+TensorFlow is also pre-installed on Google Colaboratory, can be installed from source code on Linux and macOS, and can be installed on the command line using \verb+pip install tensorflow+ for the current stable CPU/GPU version or \verb+tf-nightly+ for the potentially unstable preview build. In my Anaconda environment, some key dependencies are recognizable: NumPy, for arrays; TensorBoard for visualization; Keras, the API; Bazel, for building (needed when TensorFlow is being installed from source code). 
 
-$= \dd{E_{c}}{y_{j,c}} \cdot \dd{y_{j,c}}{x_{j,c}}$ \\
+Keras depends on Python's suite of scientific tools (NumPy and SciPy), BLAS for the CPU, and the CUDA drivers and cuDNN so that the GPU can manage DNN code.
 
-$= (y_{j,c} - d_{j,c}) \cdot f'(x_{j,c})$ \\
+%%% 5. Strengths and Shortcomings
+\section{Strengths and Shortcomings}
+
+The fast tape system for autograd is a selling point for PyTorch. When a neural network is built in PyTorch, a dynamic graph is built. When the graph (the network behaviour) is changed, PyTorch can quickly adapt by using the tape recording and reverse-mode autodiff so that there is no need to start the graph from scratch. It is open-source with a large community. For shortcomings, the included visualization features are not as sophisticated as those in TensorFlow and an API server is needed when putting a program into production. 
+
+TensorFlow visualizes training well with TensorBoard and is production-ready. Again, there is a large open-source community. Unfortunately, the graphs are static and the debugging methods are not as good; together, these make it harder to implement quick fixes to the users' programs. 
+
+Keras supports mutliple GPUs. The combination of modularity, available pre-trained models and fast deployment make it user-friendly. However, it is slow compared to the backend and working with the low-level TensorFlow functionality may lead to errors that Keras does not catch. Without the TensorFlow backend, freedom is quite limited.  
+
+%%%% ---------------- Similarities and Differences Table Goes Here ----------------
+\begin{table*}
+\caption{Similarities and Differences}
+\label{my-label}
+\begin{tabularx}{\textwidth}{@{} l *{10}{C}}
+\toprule
+Library  
+& Open Source & Platform & CUDA Support & Autodiff & Speed & API level & Debugging \\ 
+\midrule
+PyTorch & Yes & Linux/macOS/Windows & Yes & Yes & Fast & Low & Easy\\ 
+\addlinespace
+TensorFlow & Yes & Linux/macOS/Windows & Yes & Yes & Fast & Both & Hard\\ 
+\addlinespace
+Keras & Yes & Linux/macOS/Windows & Yes & Yes & Slow & High & Easy\\ 
+\bottomrule
+\end{tabularx}
+\end{table*}
 
 
-%%% Case 2
-\section{Part B, Case 2: Hidden Layer}
-
-The objective in this section is to calculate $\dd{E_{c}}{y_{j, c}}$ again, but neuron $j$ is in a (general) hidden layer. Since $j$ can no longer be used to index over the output layer, we can use $l$ to index over the output layer instead. For brevity, we can set $e_{l, c} = d_{l, c} - y_{l, c}$, and so we can write a version of the error function as follows:
-
-\begin{equation}
-E_{c} = \frac{1}{2}\sum_{l}e_{l, c}^{2}
-\end{equation}
-
-We can express our objective using the chain rule as follows:
-
-\begin{equation}
-\dd{E_{c}}{y_{j, c}} = \dd{E_{c}}{e_{j, c}} \cdot \dd{e_{l, c}}{x_{l, c}} \cdot \dd{x_{l, c}}{y_{j, c}}
-\end{equation}
-
-For the first derivative in the chain, we can calculate it using the chain rule:
-
-\begin{equation}
-\dd{E_{c}}{e_{j, c}} = \dd{}{e_{j, c}} \frac{1}{2}\sum_{l}e_{l, c}^{2} = \sum_{l}e_{i, c} = \sum_{l}(d_{l,c} - y_{l,c})
-\end{equation}
-
-For the second derivative in the chain (notice that $e_{l, c}$ is the sum of a constant and an activation function):
-
-\begin{equation}
-\dd{e_{l, c}}{x_{l, c}} = \dd{}{x_{l,c}}(d_{l,c} - y_{l, c}) = -f'(x_{l,c})
-\end{equation}
-
-Putting together what we have: \\
-
-$\dd{E_{c}}{y_{j, c}} = \sum_{l}(y_{l, c} - d_{j, c}) \cdot f'(x_{l, c}) \cdot \dd{x_{l, c}}{y_{j, c}} = \sum_{l} \delta_{l, c} \dd{x_{l, c}}{y_{j, c}}$ \\
-
-The first part looks like the error signal from the previous section. Lastly, we must calculate the final derivative in the chain, which connects the total input to the output layer ($x_{l, c}$) to the output of node $j$ in the hidden layer. \\
-
-$\dd{x_{l, c}}{y_{j, c}}$ \\
-
-$= \dd{x_{l, c}}{y_{k, c}} \cdot \dd{y_{k, c}}{y_{k-1, c}} \cdot \ldots \cdot \dd{y_{j+1, c}}{y_{j, c}}$ \\
-
-$= w_{lk,c} \cdot \dd{y_{k, c}}{y_{k-1, c}} \cdot \ldots \cdot \dd{y_{j+1, c}}{y_{j, c}}$ \\
-
-Lots of repetition is present as the path makes its way back to the layer with node $j$, with term $\dd{y_{k,c}}{y_{k-1,c}}$ looking like $\sum_{k}f'(x_{k,c})w_{k,k+1,c}$ and so on. However, we can use the $\delta$ to avoid a very long equation. \\
-
-In Case 1, where $j$ was in the output layer, we had $\delta_{j, c} = \dd{E_{c}}{x_{j, c}}$. We can define this for any $j$, in accordance with equation $\delta_{j}^{k} = \dd{E}{a_{j}^{k}} = \sum_{l=1}^{r^{k+1}} \dd{E}{a_{l}^{k+1}} \dd{a_{l}^{k+1}}{a_{j}^{k}}$ \cite{b1}. \\
-
-$\delta_{j}$ \\
-
-$= \dd{E_{c}}{x_{j, c}}$ \\
-
-Applying the chain rule, and using $k$ to index over the nodes in the next layer, we attain: \\
-
-$= \sum_{k} \dd{E_{c}}{x_{k, c}} \cdot \dd{x_{k, c}}{x_{j, c}}$ \\
-
-If we are generalizing $\delta$, we can use $\delta_{k, c} = \dd{E_{c}}{x_{k, c}}$ and define $\delta$ recursively: \\
-
-$= \sum_{k} \delta_{k} \cdot \dd{x_{k, c}}{x_{j, c}}$ \\
-
-And, we replace the second term: \\
-
-$= \sum_{k} \delta_{k} \cdot \dd{x_{k, c}}{y_{j, c}} \cdot \dd{y_{j,c}}{x_{j,c}}$ \\
-
-$= \sum_{k} \delta_{k} \cdot w_{kj, c} \cdot f'(x_{j, c})$ \\
-
-Now $\delta$ has been generalized and it can be used to simplify Equation \verb+(2)+. We would like to find a path along the computation graph from $E_{c}$ to $y_{j,c}$; the general $\delta$ can take us all the way to the total input to a node (some $x$), so using the chain rule we will get as close as we can to $y_{j,c}$ (which is $x_{k,c}$, the input to the layer in front of $j$) and then take the additional small step from $x_{k, c}$ to $y_{j, c}$. This is summarized in Equation \verb+(5)+:
-
-\begin{equation}
-\dd{E_{c}}{y_{j,c}} = \dd{E_{c}}{x_{k,c}} \cdot \dd{x_{k,c}}{y_{j,c}}
-\end{equation}
-
-Total inputs to a node are weighted sums, so:
-
-\begin{equation}
-\dd{x_{k,c}}{y_{j,c}} = \dd{}{y_{j,c}} \sum_{j}w_{kj,c}y_{j,c} = w_{kj,c}
-\end{equation}
-
-We can now input $\delta$ to complete Equation \verb+(5)+, noting that (like Equation 4 of backpropagation) we must sum over all of the nodes in the next layer since they will be receiving $y_{j,c}$ as input:
-
-\begin{equation}
-\dd{x_{k,c}}{y_{j,c}} = \sum_{k}\delta_{k,c}w_{kj,c}
-\end{equation}
-
-%%% Case 3
-\section{Part C: Sigmoid Activation Function}
-
-In this section, we will specify our general activation function $f$ and assume that $f = \sigma$, the sigmoid function. The definition is included here:
-
-\begin{equation}
-y_{j} = \sigma(x_{j}) = \frac{1}{1 + e^{-x_{j}}}
-\end{equation}
-
-Also, the derivative: \\
-
-$\dd{y_{j}}{x_{j}}$ \\
-
-$= \dd{}{x_{j}} \sigma(x_{j})$ \\
-
-$= \dd{}{x_{j}} \frac{1}{1 + e^{-x_{j}}}$ \\
-
-$= \frac{e^{-x_{j}}}{(1 + e^{-x_{j}})^{2}}$ \\
-
-$= \frac{1}{1 + e^{-x_{j}}} \cdot \frac{e^{-x_{j}}}{1 + e^{-x_{j}}}$ \\
-
-$= y_{j} \cdot \frac{e^{-x_{j}}}{1 + e^{-x_{j}}}$ \\
-
-$= y_{j} \cdot \frac{(1 - 1) + e^{-x_{j}}}{1 + e^{-x_{j}}}$ \\
-
-$= y_{j} \cdot \big[ \frac{1 + e^{-x_{j}}}{1 + e^{-x_{j}}} - \frac{1}{1 + e^{-x_{j}}} \big]$ \\
-
-$= y_{j}(1 - y_{j})$ \\
-
-For this step, we can simply replace all instances of $f$ and $f'$ according to $f(x_{j}) = y_{j} = \sigma(x_{j})$ and $f'(x_{j}) = y_{j}(1 - y_{j}) = \sigma(x_{j})(1 - \sigma(x_{j}))$. Equation \verb+(2)+ would be re-written as the following, in accordance with Equations \verb+(3)+ and \verb+(4)+:
-
-\begin{equation}
-\dd{E_{c}}{y_{j, c}} = \sum_{l}(d_{j,c} - y_{l,c})y_{l,c}(1 - y_{l,c})\dd{x_{l,c}}{y_{j,c}}
-\end{equation}
-
-The general $\delta_{j}$ becomes:
-
-\begin{equation}
-\delta_{j} = \sum_{k}\delta_{k} \cdot w_{kj,c} \cdot y_{j}(1 - y_{j})
-\end{equation}
+%%% 6. Software of Choice
+\section{Software of Choice}
+In general, TensorFlow (with Keras) is easier to use, while PyTorch is more complex but provides the programmer with a considerable amount of freedom and good debugging capabilities. For Assignment 5, my group and I put together a visualizer for the backpropagation of a CNN being trained on the MNIST dataset. We chose PyTorch for our implementation because the functionality we wanted for our program---the GUI updates in (just about) real-time as the network is training in a worker thread---seemed to be easier to do in PyTorch. In PyTorch, the backward() function can be called explicitly, giving us a good indication of where the backpropagation was happening in the code. In TensorFlow, the updating weights could be recorded using callback functionality (as the model is being fit, the process can be written to a ``history" variable). This may have required custom callback code to save the weights, and it did not seem like the ideal interface for writing to the GUI in real time.
 
 %%% Bibliography
 
 \begin{thebibliography}{00}
 
-\bibitem{b1} J. McGonagle, G. Shaikouski, C. Williams, A. Hsu, J. Khim, and A. Miller, “Backpropagation,” Brilliant Math \& Science Wiki. [Online]. Available: https://brilliant.org/wiki/backpropagation/. [Accessed: 18-Oct-2022]. 
+\bibitem{b1} D. F. Team, “Python keras advantages and limitations,” DataFlair, 25-Aug-2021. [Online]. Available: https://data-flair.training/blogs/python-keras-advantages-and-limitations/. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b2} J. Terra, “Pytorch vs tensorflow vs keras: Here are the difference you should know,” Simplilearn.com, 22-Sep-2022. [Online]. Available: https://www.simplilearn.com/keras-vs-tensorflow-vs-pytorch-article. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b3} Keras-Team, “Keras-Team/Keras: Deep Learning for Humans,” GitHub, 2015. [Online]. Available: https://github.com/keras-team/keras. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b4} PyTorch, “Pytorch,” PyTorch. [Online]. Available: https://pytorch.org/get-started/locally/. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b5} Pytorch, “Pytorch/Pytorch: Tensors and dynamic neural networks in python with strong GPU acceleration,” GitHub, 2017. [Online]. Available: https://github.com/pytorch/pytorch. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b6} S. Gupta, “Tensorflow 1.0 vs. tensorflow 2.0: What's the difference?,” Springboard Blog, 20-Jul-2022. [Online]. Available: https://www.springboard.com/blog/data-science/tensorflow-1-0-vs-tensorflow-2-0/. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b7} TensorFlow, “Install tensorflow 2,” TensorFlow. [Online]. Available: https://www.tensorflow.org/install. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b8} TensorFlow, “Ragged tensors” TensorFlow. [Online]. Available: https://www.tensorflow.org/guide/ragged\_tensor. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b9} Tensorflow, “Tensorflow/tensorflow: An open source machine learning framework for everyone,” GitHub, 2015. [Online]. Available: https://github.com/tensorflow/tensorflow. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b10} TensorFlow, “Trax Quick Intro,” Google Colab. [Online]. Available: https://colab.research.google.com/ github/google/trax/blob/master/trax/intro.ipynb. [Accessed: 15-Nov-2022]. 
+
+\bibitem{b11} V. Kurama, “Pytorch vs. tensorflow: Which framework is best for your deep learning project?,” Built In, 2022. [Online]. Available: https://builtin.com/data-science/pytorch-vs-tensorflow. [Accessed: 15-Nov-2022]. 
 
 \end{thebibliography}
 \vspace{12pt}
