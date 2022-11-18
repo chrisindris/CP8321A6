@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 NOV 2022 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 NOV 2022 23:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1192,25 +1192,25 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 (./Indris_CP8321_A6.aux)
 \openout1 = `Indris_CP8321_A6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 34.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    ... okay on input line 34.
 
 -- Lines per column: 56 (exact).
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1282,102 +1282,102 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 \c@lstlisting=\count337
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 69.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 66.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1400) in paragraph at lines 87--88
+Underfull \hbox (badness 1400) in paragraph at lines 84--85
 \OT1/ptm/m/n/10 tory, can be in-stalled from source code on Linux and
  []
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd)
-Overfull \hbox (30.24332pt too wide) in paragraph at lines 115--115
+Overfull \hbox (30.24332pt too wide) in paragraph at lines 112--112
  []|\OT1/ptm/m/n/8 Linux/macOS/Windows| 
  []
 
 
-Overfull \hbox (30.24332pt too wide) in paragraph at lines 115--115
+Overfull \hbox (30.24332pt too wide) in paragraph at lines 112--112
  []|\OT1/ptm/m/n/8 Linux/macOS/Windows| 
  []
 
 
-Overfull \hbox (30.24332pt too wide) in paragraph at lines 115--115
+Overfull \hbox (30.24332pt too wide) in paragraph at lines 112--112
  []|\OT1/ptm/m/n/8 Linux/macOS/Windows| 
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 121--122
+Underfull \hbox (badness 1448) in paragraph at lines 118--119
 \OT1/ptm/m/n/10 sor-Flow has fully adopted Keras as a fron-tend; hence,
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 []\OT1/ptm/m/n/8 F. Chol-let, \Keras Doc-u-men-ta-tion: Multi-gpu and dis-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
 \OT1/ptm/m/n/8 tributed train-ing," Keras, 28-Apr-2020. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 139--140
+Underfull \hbox (badness 1783) in paragraph at lines 136--137
 []\OT1/ptm/m/n/8 J. Terra, \Py-torch vs ten-sor-flow vs keras: Here are the dif
 -fer-
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 139--140
+Underfull \hbox (badness 1917) in paragraph at lines 136--137
 \OT1/ptm/m/n/8 ence you should know," Sim-plilearn.com, 22-Sep-2022. [On-line].
 
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 141--142
+Underfull \hbox (badness 1472) in paragraph at lines 138--139
 \OT1/ptm/m/n/8 2015. [On-line]. Avail-able: https://github.com/keras-team/keras
 . [Ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 []\OT1/ptm/m/n/8 PyTorch, \Py-torch," Py-Torch. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 []\OT1/ptm/m/n/8 S. Gupta, \Ten-sor-flow 1.0 vs. ten-sor-flow 2.0: What's the
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 146--147
+Underfull \hbox (badness 3417) in paragraph at lines 143--144
 \OT1/ptm/m/n/8 dif-fer-ence?," Spring-board Blog, 20-Jul-2022. [On-line]. Avail
 -able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 \OT1/ptm/m/n/8 https://www.springboard.com/blog/data-science/tensorflow-1-0-vs-
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 149--150
+Underfull \hbox (badness 1360) in paragraph at lines 146--147
 \OT1/ptm/m/n/8 ing frame-work for ev-ery-one," GitHub, 2015. [On-line]. Avail-a
 ble:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 \OT1/ptm/m/n/8 https://colab.research.google.com/github/google/trax/blob/master
 /trax/
  []
 
 
-Underfull \hbox (badness 2799) in paragraph at lines 151--152
+Underfull \hbox (badness 2799) in paragraph at lines 148--149
 []\OT1/ptm/m/n/8 V. Ku-rama, \Py-torch vs. ten-sor-flow: Which frame-work is be
 st
  []
