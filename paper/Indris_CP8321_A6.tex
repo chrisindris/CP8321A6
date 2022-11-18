@@ -26,6 +26,14 @@
 
 \usepackage[utf8]{inputenc}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    }
+
 % macros
 \newcommand{\dd}[2]{\frac{\partial #1}{\partial #2}} % partial derivative
 
@@ -118,6 +126,8 @@ Keras & Yes & Linux/macOS/Windows & Yes & Yes & Slow & High & Easy & Good \\
 To experience the different platforms, I opted for the purpose of this paper to see about implementing a CNN using the different libraries. Though I made separate Keras and TensorFlow files, I learned while doing this assignment that Keras requires the TensorFlow backend and TensorFlow has fully adopted Keras as a frontend; hence, the architecture and training for these two are virtually identical. This exercise was primarily to assess the user experience. As I used Google Colaboratory, I could bypass almost all of the installation steps. Both PyTorch and Keras include the MNIST dataset, and so these can be imported using \verb+torchvision.datasets.MNIST()+ and \verb+tfds.load()+ respectively, where \verb+torchvision+ is a PyTorch-related library for computer vision work (also pre-installed in Colaboratory) and \verb+tfds+ (TensorFlow Data Sets) is a TensorFlow-related library for data loading, which can easily be installed using \verb+!pip install tfds-nightly+. For all libraries, it was easy to plot a few example images. In Keras/TensorFlow, building the model architecture could be done by adding instances of the \verb+Layers+ module to an instance of the \verb+Sequential+ class. In PyTorch, I created a class inheriting from the \verb+torch.nn.Module+ class to create a neural network. The class's \verb+__init__+ method was where variables were assigned (using the \verb+Conv2D+, \verb+Dropout2d+ and \verb+Linear+ classes for representing the layers), and the \verb+forward()+ method specified the activation functions (from \verb+torch.nn.Functional+). Though Keras required that the input shape of the data be specified, the \verb+forward()+ function made the building of the architecture in PyTorch a bit more complicated (specifying activation functions in Keras amounts to simply passing a string argument into each layer). Training in Keras is incredibly easy; the \verb+fit()+ function takes the training and test sets, batch size and epoch count as inputs and does the rest, while returning a simple callback (a brief history of the loss over the epochs, for graphing purposes). For both TensorFlow/Keras and PyTorch, I was able to get and plot the learned weights. I was also able to see a particular case and make a prediction on it (the \verb+predict()+ method from Keras is used for this), although since this involves selecting a case from the datasets I suspect that the complexity in doing this varies more based on the method for data loading (various methods exist for all libraries) than the libraries themselves. 
 
 In terms of performance, the PyTorch model attained a test accuracy of 94\% after one epoch and 97\% after three epochs, whereas the Keras/TensorFlow files attained 70\% and 72\% after one epoch, 94\% after three epochs and 96\% after six epochs. This difference between the Keras and TensorFlow files seemed to decrease as the epochs progressed; this seems reasonable, as the only substantive difference between them would be the random initialization of weights. The PyTorch model may differ from the other two as a result of slightly different versions of losses and metrics. Existing studies have shown that there is no significant difference in the system performance during training between the libraries \cite{Dai}\cite{Chirodea}.  
+
+My implementations can be found in the Python notebooks at \href{https://github.com/chrisindris/CP8321A6}{https://github.com/chrisindris/CP8321A6}.
 
 %%% 7. Software of Choice
 \section{Software of Choice}
