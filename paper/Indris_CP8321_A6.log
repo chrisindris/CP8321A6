@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  15 NOV 2022 23:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 NOV 2022 23:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1184,28 +1184,33 @@ Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 (/usr/local/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
 File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks47
+\inpenc@posthook=\toks48
+)
 (./Indris_CP8321_A6.aux)
 \openout1 = `Indris_CP8321_A6.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    ... okay on input line 37.
 
 -- Lines per column: 56 (exact).
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1215,12 +1220,12 @@ LaTeX Font Info:    ... okay on input line 35.
 \scratchbox=\box70
 \nofMPsegments=\count332
 \nofMParguments=\count333
-\everyMPshowfont=\toks47
+\everyMPshowfont=\toks49
 \MPscratchCnt=\count334
 \MPscratchDim=\dimen339
 \MPnumerator=\count335
 \makeMPintoPDFobject=\count336
-\everyMPtoPDFconversion=\toks48
+\everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1277,99 +1282,102 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 \c@lstlisting=\count337
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 67.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 69.
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1400) in paragraph at lines 85--86
+Underfull \hbox (badness 1400) in paragraph at lines 87--88
 \OT1/ptm/m/n/10 tory, can be in-stalled from source code on Linux and
  []
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd)
-Overfull \hbox (21.81302pt too wide) in paragraph at lines 113--113
+Overfull \hbox (30.24332pt too wide) in paragraph at lines 115--115
  []|\OT1/ptm/m/n/8 Linux/macOS/Windows| 
  []
 
 
-Overfull \hbox (21.81302pt too wide) in paragraph at lines 113--113
+Overfull \hbox (30.24332pt too wide) in paragraph at lines 115--115
  []|\OT1/ptm/m/n/8 Linux/macOS/Windows| 
  []
 
 
-Overfull \hbox (21.81302pt too wide) in paragraph at lines 113--113
+Overfull \hbox (30.24332pt too wide) in paragraph at lines 115--115
  []|\OT1/ptm/m/n/8 Linux/macOS/Windows| 
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 127--128
+Underfull \hbox (badness 1448) in paragraph at lines 121--122
+\OT1/ptm/m/n/10 sor-Flow has fully adopted Keras as a fron-tend; hence,
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+[]\OT1/ptm/m/n/8 F. Chol-let, \Keras Doc-u-men-ta-tion: Multi-gpu and dis-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+\OT1/ptm/m/n/8 tributed train-ing," Keras, 28-Apr-2020. [On-line]. Avail-able:
+ []
+
+
+Underfull \hbox (badness 1783) in paragraph at lines 139--140
 []\OT1/ptm/m/n/8 J. Terra, \Py-torch vs ten-sor-flow vs keras: Here are the dif
 -fer-
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 127--128
+Underfull \hbox (badness 1917) in paragraph at lines 139--140
 \OT1/ptm/m/n/8 ence you should know," Sim-plilearn.com, 22-Sep-2022. [On-line].
 
  []
 
 
-Underfull \hbox (badness 1472) in paragraph at lines 129--130
+Underfull \hbox (badness 1472) in paragraph at lines 141--142
 \OT1/ptm/m/n/8 2015. [On-line]. Avail-able: https://github.com/keras-team/keras
 . [Ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 []\OT1/ptm/m/n/8 PyTorch, \Py-torch," Py-Torch. [On-line]. Avail-able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 []\OT1/ptm/m/n/8 S. Gupta, \Ten-sor-flow 1.0 vs. ten-sor-flow 2.0: What's the
  []
 
 
-Underfull \hbox (badness 3417) in paragraph at lines 135--136
+Underfull \hbox (badness 3417) in paragraph at lines 146--147
 \OT1/ptm/m/n/8 dif-fer-ence?," Spring-board Blog, 20-Jul-2022. [On-line]. Avail
 -able:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--136
+Underfull \hbox (badness 10000) in paragraph at lines 146--147
 \OT1/ptm/m/n/8 https://www.springboard.com/blog/data-science/tensorflow-1-0-vs-
 
  []
 
 
-Underfull \hbox (badness 7273) in paragraph at lines 139--140
-[]\OT1/ptm/m/n/8 TensorFlow, \Ragged ten-sors" Ten-sor-Flow. [On-line]. Avail-a
-ble:
- []
-
-
-Underfull \hbox (badness 7832) in paragraph at lines 139--140
-\OT1/ptm/m/n/8 https://www.tensorflow.org/guide/ragged[]tensor. [Ac-cessed: 15-
-Nov-
- []
-
-
-Underfull \hbox (badness 1360) in paragraph at lines 141--142
+Underfull \hbox (badness 1360) in paragraph at lines 149--150
 \OT1/ptm/m/n/8 ing frame-work for ev-ery-one," GitHub, 2015. [On-line]. Avail-a
 ble:
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 143--144
-[]\OT1/ptm/m/n/8 TensorFlow, \Trax Quick In-tro," Google Co-lab. [On-line]. Ava
-il-
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+\OT1/ptm/m/n/8 https://colab.research.google.com/github/google/trax/blob/master
+/trax/
  []
 
 
-Underfull \hbox (badness 2799) in paragraph at lines 145--146
+Underfull \hbox (badness 2799) in paragraph at lines 151--152
 []\OT1/ptm/m/n/8 V. Ku-rama, \Py-torch vs. ten-sor-flow: Which frame-work is be
 st
  []
@@ -1385,22 +1393,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2] [3] (./Indris_CP8321_A6.aux) ) 
+[3] (./Indris_CP8321_A6.aux) ) 
 Here is how much of TeX's memory you used:
- 37283 strings out of 492616
- 870244 string characters out of 6129482
- 1136851 words of memory out of 5000000
- 40665 multiletter control sequences out of 15000+600000
+ 37311 strings out of 492616
+ 870790 string characters out of 6129482
+ 1139851 words of memory out of 5000000
+ 40690 multiletter control sequences out of 15000+600000
  567689 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,10n,136p,1055b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc
-/dvips/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/
-ucrr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Indris_CP8321_A6.pdf (3 pages, 70625 bytes).
+ 78i,10n,136p,2593b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvi
+ps/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr
+8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/20
+19/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Indris_CP8321_A6.pdf (3 pages, 80210 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream
